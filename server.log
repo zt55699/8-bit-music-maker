@@ -1,0 +1,15 @@
+127.0.0.1 - - [08/Jul/2025 01:32:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2025 01:32:49] "GET /script.js HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2025 01:32:49] code 404, message File not found
+127.0.0.1 - - [08/Jul/2025 01:32:49] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [08/Jul/2025 01:32:55] "HEAD / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2025 01:46:32] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2025 01:46:32] "GET /script.js HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2025 01:46:32] code 404, message File not found
+127.0.0.1 - - [08/Jul/2025 01:46:32] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [08/Jul/2025 01:46:32] code 404, message File not found
+127.0.0.1 - - [08/Jul/2025 01:46:32] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [08/Jul/2025 01:46:42] "GET / HTTP/1.1" 304 -
+127.0.0.1 - - [08/Jul/2025 01:46:42] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [08/Jul/2025 01:46:42] code 404, message File not found
+127.0.0.1 - - [08/Jul/2025 01:46:42] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-Bit Music Maker</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #1a1a1a;
+            color: #00ff00;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #00ff00;
+            text-shadow: 2px 2px 4px rgba(0, 255, 0, 0.5);
+            margin-bottom: 30px;
+        }
+        
+        .controls {
+            margin: 20px 0;
+        }
+        
+        button {
+            background-color: #333;
+            color: #00ff00;
+            border: 2px solid #00ff00;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        button:hover {
+            background-color: #00ff00;
+            color: #1a1a1a;
+        }
+        
+        .music-display {
+            background-color: #000;
+            border: 2px solid #00ff00;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            min-height: 100px;
+            text-align: left;
+        }
+        
+        .keyboard-hint {
+            margin: 20px 0;
+            font-size: 14px;
+            color: #888;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 200px;
+            background-color: #000;
+            color: #00ff00;
+            border: 2px solid #00ff00;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            resize: vertical;
+        }
+        
+        .status {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #ffff00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎵 8-Bit Music Maker 🎵</h1>
+        
+        <div class="controls">
+            <button id="playBtn">▶️ Play</button>
+            <button id="stopBtn">⏹️ Stop</button>
+            <button id="clearBtn">🗑️ Clear</button>
+            <button id="saveBtn">💾 Save</button>
+            <button id="loadBtn">📁 Load</button>
+        </div>
+        
+        <div class="keyboard-hint">
+            Press keyboard keys to create music! (A-Z, 0-9, Space for pause, Backspace to delete)
+        </div>
+        
+        <div class="music-display" id="musicDisplay">
+            Your music will appear here...
+        </div>
+        
+        <div class="status" id="status">Ready to make music!</div>
+        
+        <div style="margin-top: 20px;">
+            <h3>Save/Load Music Data</h3>
+            <textarea id="musicData" placeholder="Music data will appear here in text format..."></textarea>
+            <br>
+            <button id="copyBtn">📋 Copy to Clipboard</button>
+            <button id="pasteBtn">📋 Paste from Clipboard</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
