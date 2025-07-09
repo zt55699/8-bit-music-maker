@@ -6,11 +6,15 @@ A web-based musical instrument that lets you create 8-bit style music using your
 
 - **Real-time Music Creation**: Type keyboard keys to instantly generate 8-bit sounds
 - **Authentic 8-bit Sound**: Uses Web Audio API with square wave oscillators for genuine retro sound
-- **Visual Feedback**: See your music sequence displayed in real-time
+- **Visual Note Blocks**: Notes display as interactive colored blocks instead of text
+- **Drag & Drop Editing**: Click and drag note blocks to reorder your music sequence
+- **Advanced Navigation**: Use arrow keys to move cursor and navigate through notes
+- **Visual Playback**: See current note highlighted and played notes dimmed during playback
 - **Playback Controls**: Play, stop, and clear your compositions
-- **Save/Load System**: Export music as JSON text format for sharing and persistence
+- **Auto-Load System**: Automatically loads music data when pasted into textarea
+- **Demo Song**: Load a pre-composed 8-bit melody to get started quickly
 - **Clipboard Support**: Copy and paste music data easily
-- **Backspace Support**: Delete the last entered note with backspace
+- **Mobile Responsive**: Optimized interface for mobile devices and tablets
 
 ## Quick Start
 
@@ -30,7 +34,14 @@ A web-based musical instrument that lets you create 8-bit style music using your
 - **A-Z**: Various musical notes (different frequencies)
 - **0-9**: Lower octave notes
 - **Space**: Pause/rest in the music
-- **Backspace**: Delete the last entered note
+
+### Navigation & Editing
+- **Arrow Left/Right**: Move cursor position for inserting notes
+- **Arrow Up/Down**: Select previous/next note
+- **Backspace**: Delete note before cursor
+- **Delete**: Delete selected note
+- **Ctrl+D**: Duplicate selected note
+- **Escape**: Deselect all notes
 
 ### Key-to-Frequency Mapping
 ```
@@ -42,13 +53,21 @@ Numbers: 1(65.41) 2(73.42) 3(82.41) 4(87.31) 5(98.00) 6(110.00) 7(123.47) 8(130.
 
 ## Interface Controls
 
-- **▶️ Play**: Play your current music sequence
+### Main Controls
+- **▶️ Play**: Play your current music sequence with visual feedback
 - **⏹️ Stop**: Stop playback
 - **🗑️ Clear**: Clear all music data
 - **💾 Save**: Export music to text format
-- **📁 Load**: Import music from text format
+
+### Data Management
 - **📋 Copy to Clipboard**: Copy music data to clipboard
-- **📋 Paste from Clipboard**: Paste music data from clipboard
+- **📋 Paste from Clipboard**: Paste and auto-load music data from clipboard
+- **🎵 Load Demo Song**: Load a pre-composed 8-bit melody to get started
+
+### Note Block Interactions
+- **Click**: Select a note block
+- **Double-click**: Play the selected note
+- **Drag & Drop**: Reorder notes by dragging them to new positions
 
 ## Music Data Format
 
@@ -91,11 +110,14 @@ Music is stored as JSON with the following structure:
 
 ## Usage Tips
 
-1. **Create Melodies**: Use the QWERTY row for a natural musical scale
-2. **Add Rhythm**: Use space for pauses and timing
-3. **Experiment**: Try different key combinations for unique sounds
-4. **Save Your Work**: Use the save/load feature to preserve compositions
-5. **Share Music**: Copy the JSON data to share with others
+1. **Get Started**: Click "🎵 Load Demo Song" to see the app in action
+2. **Create Melodies**: Use the QWERTY row for a natural musical scale
+3. **Navigate Easily**: Use arrow keys to move cursor and select notes
+4. **Edit Visually**: Drag and drop note blocks to rearrange your music
+5. **Add Rhythm**: Use space for pauses and timing
+6. **Watch Playback**: Observe the visual feedback during music playback
+7. **Auto-Load**: Simply paste JSON data into the textarea - it loads automatically
+8. **Mobile Friendly**: Works great on phones and tablets with responsive design
 
 ## Browser Requirements
 

@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a web-based 8-bit music creation tool built with vanilla HTML, CSS, and JavaScript. Users can create retro-style music by typing keyboard keys, with real-time audio feedback and the ability to save/load compositions.
+This is a web-based 8-bit music creation tool built with vanilla HTML, CSS, and JavaScript. Users can create retro-style music by typing keyboard keys, with real-time audio feedback, visual note blocks, drag-and-drop editing, and advanced navigation features. The app includes auto-loading capabilities and mobile-responsive design.
 
 ## Architecture
 
@@ -18,17 +18,25 @@ This is a web-based 8-bit music creation tool built with vanilla HTML, CSS, and 
 #### BitMusicMaker Class Structure
 ```javascript
 class BitMusicMaker {
-    constructor()                    // Initialize app
+    constructor()                    // Initialize app with cursor and selection tracking
     initializeAudio()               // Setup Web Audio API
     setupKeyMapping()               // Define key-to-frequency mapping
     setupEventListeners()           // Bind UI and keyboard events
-    handleKeyPress(e)               // Process keyboard input
+    handleKeyPress(e)               // Process keyboard input with navigation
+    insertNoteAtPosition()          // Insert note at cursor position
+    moveCursor()                    // Move cursor left/right
+    selectNote()                    // Select note for editing
+    duplicateSelectedNote()         // Duplicate selected note
+    deleteSelectedNote()            // Delete selected note
     playNote(frequency, duration)    // Generate audio
-    playSequence()                  // Play back recorded music
+    playSequence()                  // Play back with visual feedback
     stopPlayback()                  // Stop audio playback
-    updateDisplay()                 // Update visual display
+    highlightPlayingNote()          // Visual playback indicator
+    updateDisplay()                 // Update visual note blocks
+    handleDragStart/Drop()          // Drag and drop functionality
     saveMusic()                     // Export to JSON
-    loadMusic()                     // Import from JSON
+    autoLoadMusic()                 // Auto-load from textarea
+    loadDemoSong()                  // Load pre-composed demo
     serializeMusicData()            // Convert to JSON format
     deserializeMusicData()          // Parse JSON format
 }
@@ -45,12 +53,15 @@ playNote(frequency, duration = 200) {
 }
 ```
 
-### Keyboard Mapping (`script.js:20-28`)
-The application maps keyboard keys to musical frequencies:
+### Keyboard Mapping and Navigation
+The application maps keyboard keys to musical frequencies and navigation:
 - Letters A-Z: Various musical notes
 - Numbers 0-9: Lower octave notes  
 - Space: Pause (frequency 0)
-- Backspace: Delete last note
+- Arrow Keys: Navigation and selection
+- Backspace/Delete: Note deletion
+- Ctrl+D: Note duplication
+- Escape: Deselect all
 
 ### Data Storage Format
 Music is stored as JSON with this structure:
@@ -77,40 +88,71 @@ python3 -m http.server 8080
 
 ## Key Features Implementation
 
+### Visual Note Blocks
+- Interactive colored blocks representing each note
+- Drag and drop functionality for reordering
+- Visual selection with subtle glow effects
+- Animated cursor showing insertion point
+
+### Advanced Navigation
+- Arrow key navigation for cursor movement
+- Note selection with up/down arrows
+- Keyboard shortcuts for editing operations
+- Visual feedback for all interactions
+
+### Enhanced Playback
+- Current note highlighting during playback
+- Played notes dimming for progress tracking
+- Different opacity for pause notes
+- Continuous visual feedback
+
 ### Real-time Audio
 - Web Audio API with square wave oscillators
 - 200ms note duration with exponential decay
 - Audio context management for browser compatibility
 
-### Keyboard Input
-- Event prevention for space key to avoid focus loss
-- Backspace support for editing
-- Key repeat prevention
+### Auto-Loading System
+- Automatic music loading from textarea changes
+- Paste functionality with instant loading
+- Demo song for quick start experience
 
-### Visual Feedback
-- Real-time music sequence display
-- Status messages for user actions
-- Retro-styled green terminal aesthetic
+### Mobile Responsive Design
+- Flexible button layouts with wrap functionality
+- Responsive breakpoints for different screen sizes
+- Touch-friendly interactions
+- Optimized spacing and sizing
 
 ## Testing Checklist
 
 ### Core Functionality
-- [ ] Keyboard input generates sound
+- [ ] Keyboard input generates sound and creates note blocks
 - [ ] Space creates pause without losing focus
-- [ ] Backspace deletes last note
-- [ ] Play/stop controls work
+- [ ] Arrow keys navigate cursor and select notes
+- [ ] Backspace/Delete removes notes correctly
+- [ ] Play/stop controls work with visual feedback
 - [ ] Clear function resets everything
+- [ ] Demo song loads correctly
+
+### Visual Interface
+- [ ] Note blocks display correctly
+- [ ] Drag and drop reordering works
+- [ ] Cursor animation shows insertion point
+- [ ] Note selection highlighting works
+- [ ] Playback visual feedback functions
+- [ ] Mobile responsive layout works
 
 ### Audio Features
 - [ ] All mapped keys produce distinct sounds
 - [ ] Volume levels are appropriate
 - [ ] No audio artifacts or clicks
 - [ ] Playback timing is consistent
+- [ ] Visual playback sync is accurate
 
 ### Data Persistence
 - [ ] Save exports valid JSON
-- [ ] Load imports JSON correctly
+- [ ] Auto-load from textarea works
 - [ ] Clipboard copy/paste works
+- [ ] Demo song functionality works
 - [ ] Invalid JSON handled gracefully
 
 ### Browser Compatibility

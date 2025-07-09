@@ -17,6 +17,7 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
+            padding: 10px;
         }
         
         h1 {
@@ -54,6 +55,203 @@
             font-size: 16px;
             min-height: 100px;
             text-align: left;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            align-items: center;
+            position: relative;
+        }
+        
+        .note-block {
+            background-color: #00ff00;
+            color: #000;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: move;
+            font-weight: bold;
+            position: relative;
+            user-select: none;
+            border: 2px solid #00ff00;
+            transition: all 0.2s ease;
+        }
+        
+        .note-block:hover {
+            background-color: #ffff00;
+            border-color: #ffff00;
+            transform: scale(1.05);
+        }
+        
+        .note-block.dragging {
+            opacity: 0.5;
+            z-index: 1000;
+        }
+        
+        .note-block.pause {
+            background-color: #666;
+            color: #fff;
+            border-color: #666;
+        }
+        
+        .note-block.pause:hover {
+            background-color: #888;
+            border-color: #888;
+        }
+        
+        .note-block.selected {
+            box-shadow: 0 0 0 3px #00ff00, 0 0 10px rgba(0, 255, 0, 0.5);
+            border-color: #00ff00;
+        }
+        
+        .note-block.playing {
+            box-shadow: 0 0 0 3px #ffff00, 0 0 20px rgba(255, 255, 0, 0.8);
+            border-color: #ffff00;
+            transform: scale(1.1);
+        }
+        
+        .note-block.playing.pause {
+            opacity: 0.5;
+        }
+        
+        .note-block.played {
+            opacity: 0.5;
+        }
+        
+        .cursor {
+            width: 2px;
+            height: 30px;
+            background-color: #00ff00;
+            animation: blink 1s infinite;
+            position: relative;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .drop-zone {
+            min-width: 10px;
+            min-height: 30px;
+            border: 2px dashed transparent;
+            transition: border-color 0.2s;
+        }
+        
+        .drop-zone.drag-over {
+            border-color: #ffff00;
+        }
+        
+        .controls-row {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+        
+        .note-actions {
+            display: flex;
+            gap: 5px;
+            margin: 10px 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 5px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+                margin-bottom: 15px;
+            }
+            
+            button {
+                padding: 8px 12px;
+                font-size: 12px;
+                margin: 3px;
+            }
+            
+            .controls-row {
+                gap: 5px;
+                margin: 5px 0;
+            }
+            
+            .note-actions {
+                gap: 5px;
+                margin: 5px 0;
+            }
+            
+            .keyboard-hint {
+                font-size: 12px;
+                margin: 10px 0;
+            }
+            
+            .music-display {
+                padding: 10px;
+                margin: 10px 0;
+                min-height: 80px;
+            }
+            
+            .note-block {
+                padding: 6px 10px;
+                font-size: 14px;
+            }
+            
+            textarea {
+                height: 150px;
+                font-size: 12px;
+            }
+            
+            .status {
+                font-size: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2em;
+            }
+            
+            button {
+                padding: 6px 8px;
+                font-size: 11px;
+                margin: 2px;
+            }
+            
+            .controls-row {
+                gap: 3px;
+            }
+            
+            .note-actions {
+                gap: 3px;
+            }
+            
+            .keyboard-hint {
+                font-size: 11px;
+                line-height: 1.3;
+            }
+            
+            .music-display {
+                padding: 8px;
+                gap: 3px;
+            }
+            
+            .note-block {
+                padding: 4px 8px;
+                font-size: 12px;
+            }
+            
+            textarea {
+                height: 120px;
+                font-size: 11px;
+            }
         }
         
         .keyboard-hint {
@@ -86,15 +284,17 @@
         <h1>🎵 8-Bit Music Maker 🎵</h1>
         
         <div class="controls">
-            <button id="playBtn">▶️ Play</button>
-            <button id="stopBtn">⏹️ Stop</button>
-            <button id="clearBtn">🗑️ Clear</button>
-            <button id="saveBtn">💾 Save</button>
-            <button id="loadBtn">📁 Load</button>
+            <div class="controls-row">
+                <button id="playBtn">▶️ Play</button>
+                <button id="stopBtn">⏹️ Stop</button>
+                <button id="clearBtn">🗑️ Clear</button>
+                <button id="saveBtn">💾 Save</button>
+            </div>
         </div>
         
         <div class="keyboard-hint">
-            Press keyboard keys to create music! (A-Z, 0-9, Space for pause, Backspace to delete)
+            Press keyboard keys to create music! (A-Z, 0-9, Space for pause)<br>
+            Use arrow keys to move cursor, Backspace/Delete to remove notes, Ctrl+D to duplicate
         </div>
         
         <div class="music-display" id="musicDisplay">
@@ -109,6 +309,7 @@
             <br>
             <button id="copyBtn">📋 Copy to Clipboard</button>
             <button id="pasteBtn">📋 Paste from Clipboard</button>
+            <button id="demoBtn">🎵 Load Demo Song</button>
         </div>
     </div>
 
