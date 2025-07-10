@@ -1,0 +1,20 @@
+127.0.0.1 - - [09/Jul/2025 23:10:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jul/2025 23:11:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jul/2025 23:15:32] "GET / HTTP/1.1" 304 -
+127.0.0.1 - - [09/Jul/2025 23:15:32] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [09/Jul/2025 23:15:32] code 404, message File not found
+127.0.0.1 - - [09/Jul/2025 23:15:32] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [09/Jul/2025 23:30:29] "GET / HTTP/1.1" 304 -
+127.0.0.1 - - [09/Jul/2025 23:30:29] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [09/Jul/2025 23:30:30] code 404, message File not found
+127.0.0.1 - - [09/Jul/2025 23:30:30] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [09/Jul/2025 23:30:33] "GET / HTTP/1.1" 304 -
+127.0.0.1 - - [09/Jul/2025 23:30:33] code 404, message File not found
+127.0.0.1 - - [09/Jul/2025 23:30:33] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [09/Jul/2025 23:36:18] "GET / HTTP/1.1" 304 -
+127.0.0.1 - - [09/Jul/2025 23:36:18] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [09/Jul/2025 23:36:18] code 404, message File not found
+127.0.0.1 - - [09/Jul/2025 23:36:18] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+127.0.0.1 - - [09/Jul/2025 23:37:42] "GET / HTTP/1.1" 304 -
+127.0.0.1 - - [09/Jul/2025 23:37:42] code 404, message File not found
+127.0.0.1 - - [09/Jul/2025 23:37:42] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -

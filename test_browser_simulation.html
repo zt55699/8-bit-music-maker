@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frontend Test</title>
+</head>
+<body>
+    <div id="uploadStatus">Ready</div>
+    <div id="status">Ready</div>
+    <textarea id="musicData" style="width: 500px; height: 200px;"></textarea>
+    
+    <script>
+        // Simulate the BitMusicMaker class for testing
+        class TestBitMusicMaker {
+            constructor() {
+                this.currentSequence = [];
+                this.cursorPosition = 0;
+                this.selectedNoteIndex = -1;
+            }
+            
+            deserializeMusicData(jsonData) {
+                try {
+                    const data = JSON.parse(jsonData);
+                    if (data.sequence && Array.isArray(data.sequence)) {
+                        console.log(`✅ Loading ${data.sequence.length} notes from analysis result`);
+                        this.currentSequence = data.sequence.map(note => ({
+                            key: note.key,
+                            frequency: note.frequency,
+                            duration: note.duration || 0.25,
+                            timestamp: Date.now()
+                        }));
+                        return true;
+                    } else {
+                        console.error('❌ Invalid music data: missing or invalid sequence');
+                        return false;
+                    }
+                } catch (e) {
+                    console.error('❌ Failed to parse music data:', e);
+                }
+                return false;
+            }
+            
+            updateDisplay() {
+                console.log('🖼️ updateDisplay called');
+            }
+            
+            updateUploadStatus(msg) {
+                document.getElementById('uploadStatus').textContent = msg;
+                console.log('📊 Upload Status:', msg);
+            }
+            
+            updateStatus(msg) {
+                document.getElementById('status').textContent = msg;
+                console.log('📊 Status:', msg);
+            }
+            
+            processAnalysisResult(result, file) {
+                try {
+                    console.log(`🎼 Processing analysis result: ${result.sequence?.length || 0} notes detected`);
+                    
+                    if (this.deserializeMusicData(JSON.stringify(result))) {
+                        this.cursorPosition = this.currentSequence.length;
+                        this.selectedNoteIndex = -1;
+                        this.updateDisplay();
+                        
+                        // Also put the JSON in the textarea
+                        document.getElementById('musicData').value = JSON.stringify(result, null, 2);
+                        
+                        const algorithm = result.analysis_params?.algorithm || 'unknown';
+                        const isAdvanced = algorithm.includes('demucs');
+                        const algorithmMsg = isAdvanced ? '🎛️ Advanced Demucs analysis' : 'Standard analysis';
+                        
+                        this.updateUploadStatus(`✅ ${algorithmMsg} complete! Found ${result.sequence.length} notes. Tempo: ${result.detected_tempo?.toFixed(1) || 'unknown'} BPM`);
+                        this.updateStatus(`Server audio analysis loaded: ${result.sequence.length} notes`);
+                        
+                        console.log(`✅ Music loaded: ${result.sequence.length} notes in sequence`);
+                        return true;
+                    } else {
+                        console.error('❌ Failed to deserialize analysis result');
+                        this.updateUploadStatus('⚠️ Failed to load analyzed sequence');
+                        return false;
+                    }
+                } catch (error) {
+                    console.error('❌ Error processing analysis result:', error);
+                    this.updateUploadStatus('⚠️ Error processing analysis result');
+                    return false;
+                }
+            }
+            
+            async waitForResult(jobId) {
+                console.log('🕐 waitForResult: Starting to wait for job:', jobId);
+                let attempts = 0;
+                while (true) {
+                    attempts++;
+                    console.log(`🕐 waitForResult: Attempt ${attempts} for job ${jobId}`);
+                    try {
+                        const response = await fetch(`http://localhost:5000/result/${jobId}`);
+                        console.log(`🕐 waitForResult: Got response status ${response.status}`);
+                        
+                        if (response.ok) {
+                            const result = await response.json();
+                            console.log('✅ waitForResult: Got final result:', result);
+                            return result;
+                        } else if (response.status === 202) {
+                            console.log('🕐 waitForResult: Still in progress, waiting...');
+                            await new Promise(resolve => setTimeout(resolve, 1000));
+                            continue;
+                        } else {
+                            const error = await response.json();
+                            console.error('❌ waitForResult: API error:', error);
+                            throw new Error(error.error || 'Analysis failed');
+                        }
+                    } catch (error) {
+                        console.error('❌ waitForResult: Error in attempt', attempts, ':', error);
+                        if (error.message.includes('fetch')) {
+                            console.log('🕐 waitForResult: Network error, retrying...');
+                            await new Promise(resolve => setTimeout(resolve, 2000));
+                            continue;
+                        } else {
+                            console.error('❌ waitForResult: Non-network error, throwing:', error);
+                            throw error;
+                        }
+                    }
+                }
+            }
+            
+            async tryFlaskAnalysis(file) {
+                const formData = new FormData();
+                formData.append('file', file);
+                formData.append('bpm_hint', '120');
+                
+                this.updateUploadStatus('🚀 Starting advanced audio analysis...');
+                
+                try {
+                    const response = await fetch('http://localhost:5000/analyze', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                    
+                    const startResult = await response.json();
+                    const jobId = startResult.job_id;
+                    
+                    if (!jobId) {
+                        throw new Error('No job ID received');
+                    }
+                    
+                    // Wait for completion and get result
+                    console.log('🔄 tryFlaskAnalysis: Waiting for result...');
+                    const result = await this.waitForResult(jobId);
+                    console.log('🔄 tryFlaskAnalysis: Got result, processing...');
+                    
+                    const success = this.processAnalysisResult(result, file);
+                    console.log('🔄 tryFlaskAnalysis: processAnalysisResult returned:', success);
+                    return success;
+                    
+                } catch (error) {
+                    throw new Error(`Flask API not available: ${error.message}`);
+                }
+            }
+            
+            async testAnalysis() {
+                try {
+                    // Create a simple mock file for testing
+                    const blob = new Blob(['mock audio data'], { type: 'audio/wav' });
+                    const file = new File([blob], 'test_mario.wav', { type: 'audio/wav' });
+                    
+                    console.log('🧪 Starting test analysis...');
+                    const success = await this.tryFlaskAnalysis(file);
+                    console.log('🧪 Test result:', success ? 'SUCCESS' : 'FAILED');
+                    
+                    if (success) {
+                        console.log('🎉 FINAL SUCCESS: Music data populated!');
+                        console.log('🎼 Final sequence length:', this.currentSequence.length);
+                    } else {
+                        console.log('💥 FINAL FAILURE: Music data not populated!');
+                    }
+                    
+                } catch (error) {
+                    console.error('💥 Test failed with error:', error);
+                    this.updateUploadStatus('❌ Test failed: ' + error.message);
+                }
+            }
+        }
+        
+        // Run the test when page loads
+        const testMaker = new TestBitMusicMaker();
+        
+        // Start test after a short delay to ensure page is ready
+        setTimeout(() => {
+            testMaker.testAnalysis();
+        }, 1000);
+        
+    </script>
+</body>
+</html>

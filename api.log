@@ -1,0 +1,25 @@
+Starting Simple 8-bit Music Analyzer API...
+⚠️  Note: This is a simplified API without real audio analysis
+   For real audio analysis, install librosa and run the full API
+
+Supported formats: flac, mp3, aac, m4a, wav, ogg
+Max file size: 16MB
+Available endpoints:
+  POST /analyze - Mock audio analysis
+  GET /info - Service information
+  POST /test-sample - Test with sample data
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Serving Flask app 'simple_api'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.199.126:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+127.0.0.1 - - [09/Jul/2025 02:29:32] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jul/2025 02:29:48] "POST /analyze HTTP/1.1" 200 -

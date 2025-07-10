@@ -1,0 +1,427 @@
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: ogg, wav, mp3, m4a, aac, flac
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Serving Flask app 'real_api'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.199.126:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+127.0.0.1 - - [09/Jul/2025 02:39:03] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jul/2025 02:39:09] "GET /info HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jul/2025 02:39:13] "GET /info HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jul/2025 02:39:43] "POST /analyze HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jul/2025 02:40:55] "POST /analyze HTTP/1.1" 200 -
+ * Detected change in '/home/tong/.local/lib/python3.12/site-packages/nvidia/__init__.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: aac, mp3, flac, ogg, m4a, wav
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+Analyzing uploaded file: test_mario.wav (BPM hint: 120)
+Starting real audio analysis of: /tmp/tmpfzuaiu5m.wav
+BPM hint: 120
+Loaded audio: 198450 samples at 44100 Hz (4.50 seconds)
+Extracted 776 fundamental frequency frames
+Minimum note duration: 0.125s (21 frames)
+Extracted 5 notes from audio
+✅ Real analysis complete: 5 notes detected
+Analyzing uploaded file: 01. Ground Theme.mp3 (BPM hint: 120)
+Starting real audio analysis of: /tmp/tmpuexl5n75.mp3
+BPM hint: 120
+Loaded audio: 8155055 samples at 44100 Hz (184.92 seconds)
+Extracted 31856 fundamental frequency frames
+Minimum note duration: 0.125s (21 frames)
+Extracted 271 notes from audio
+✅ Real analysis complete: 271 notes detected
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+ * Detected change in '/home/tong/.local/lib/python3.12/site-packages/nvidia/__init__.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: m4a, mp3, aac, wav, flac, ogg
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+ * Detected change in '/home/tong/.local/lib/python3.12/site-packages/nvidia/__init__.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: m4a, aac, mp3, flac, wav, ogg
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+ * Detected change in '/home/tong/.local/lib/python3.12/site-packages/nvidia/__init__.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: m4a, ogg, flac, mp3, wav, aac
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+ * Detected change in '/home/tong/.local/lib/python3.12/site-packages/nvidia/__init__.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: m4a, ogg, wav, flac, aac, mp3
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+127.0.0.1 - - [09/Jul/2025 02:55:01] "POST /analyze HTTP/1.1" 200 -
+ * Detected change in '/home/tong/apps/8_bit_music/advanced_audio_analyzer.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: aac, ogg, flac, m4a, wav, mp3
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+Analyzing uploaded file: 1-04. Opening.mp3 (BPM hint: 120)
+Starting real audio analysis of: /tmp/tmpzoyy18qr.mp3
+BPM hint: 120
+Loaded audio: 1942752 samples at 44100 Hz (44.05 seconds)
+Extracted 7589 fundamental frequency frames
+Minimum note duration: 0.125s (21 frames)
+Extracted 68 notes from audio
+✅ Real analysis complete: 68 notes detected
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+127.0.0.1 - - [09/Jul/2025 02:55:39] "POST /analyze HTTP/1.1" 200 -
+ * Detected change in '/home/tong/apps/8_bit_music/advanced_audio_analyzer.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: wav, ogg, flac, m4a, aac, mp3
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+Analyzing uploaded file: 1-04. Opening.mp3 (BPM hint: 120)
+Starting real audio analysis of: /tmp/tmpsxwjcfwy.mp3
+BPM hint: 120
+Loaded audio: 1942752 samples at 44100 Hz (44.05 seconds)
+Extracted 7589 fundamental frequency frames
+Minimum note duration: 0.125s (21 frames)
+Extracted 68 notes from audio
+✅ Real analysis complete: 68 notes detected
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+ * Detected change in '/home/tong/apps/8_bit_music/advanced_audio_analyzer.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: m4a, aac, wav, flac, ogg, mp3
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+ * Detected change in '/home/tong/apps/8_bit_music/advanced_audio_analyzer.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: wav, flac, aac, ogg, m4a, mp3
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+ * Detected change in '/home/tong/apps/8_bit_music/advanced_audio_analyzer.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: m4a, aac, mp3, flac, ogg, wav
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+ * Detected change in '/home/tong/apps/8_bit_music/advanced_audio_analyzer.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: aac, ogg, mp3, m4a, wav, flac
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+ * Detected change in '/home/tong/apps/8_bit_music/advanced_audio_analyzer.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: mp3, m4a, flac, ogg, wav, aac
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+ * Detected change in '/home/tong/apps/8_bit_music/advanced_audio_analyzer.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: aac, ogg, mp3, m4a, wav, flac
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+ * Detected change in '/home/tong/apps/8_bit_music/advanced_audio_analyzer.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: flac, mp3, wav, ogg, m4a, aac
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+ * Detected change in '/home/tong/apps/8_bit_music/advanced_audio_analyzer.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: wav, ogg, aac, flac, mp3, m4a
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+ * Detected change in '/home/tong/apps/8_bit_music/advanced_audio_analyzer.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: ogg, mp3, aac, flac, wav, m4a
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+ * Detected change in '/home/tong/apps/8_bit_music/advanced_audio_analyzer.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: wav, mp3, m4a, flac, aac, ogg
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+ * Detected change in '/home/tong/apps/8_bit_music/advanced_audio_analyzer.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: m4a, wav, mp3, ogg, aac, flac
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+ * Detected change in '/home/tong/apps/8_bit_music/advanced_audio_analyzer.py', reloading
+Real Audio Analyzer initialized with 24 frequencies
+✅ Real Audio Analyzer initialized successfully
+🎵 Starting REAL 8-bit Music Analyzer API...
+⚠️  This API provides REAL audio analysis only - no mock fallbacks
+   Real analyzer loaded: RealAudioAnalyzer
+   Supported frequencies: 24
+   Supported formats: m4a, mp3, wav, aac, flac, ogg
+   Max file size: 16MB
+
+Available endpoints:
+  POST /analyze - Real audio analysis (NO MOCKS)
+  GET /info - Service information
+  GET /health - Health check
+
+Starting server on http://localhost:5000
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-088-411
+127.0.0.1 - - [09/Jul/2025 03:02:50] "POST /analyze HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jul/2025 03:03:39] "POST /analyze HTTP/1.1" 200 -
